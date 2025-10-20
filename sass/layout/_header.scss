@@ -1,6 +1,7 @@
 @use "../abstract/variables" as *;
 @use "../abstract//mixins" as *;
 .header_container {
+  // position: absolute;
   background-image: linear-gradient(
       90deg,
       rgba($primary-dark, 0.95) 0%,
@@ -19,8 +20,41 @@
   width: auto;
   padding: 1rem;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .hero-section {
+    // margin-top: auto;
+    .star {
+      font-size: 8rem;
+      color: $primary-light;
+      display: inline-flex;
+      align-items: center;
+      animation: spin 10s linear infinite;
+      // &::after {
+      //   content: "";
+      //   display: block;
+      //   width: 50rem;
+      //   height: 0.1rem;
+      //   background-color: $accent-beige;
+      //   animation: normal;
+      // }
+    }
+  }
+
+  p {
+    font-size: 2.3rem;
+    color: $accent-beige;
+    margin-bottom: 2rem;
+    line-height: 2rem;
+    width: 50%;
+  }
 }
+
 header {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
   background-color: $primary-light;
   display: flex;
   justify-content: space-between;
@@ -28,15 +62,16 @@ header {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   box-shadow: $shadow-light;
+  width: calc(100vw - 4rem);
 
   .logo {
     font-size: 1.5rem;
     font-weight: 600;
     display: flex;
-    font-style: bold;
-
+    font-weight: bold;
     align-items: center;
     gap: 0.5rem;
+    height: 5rem;
     &::before {
       content: "▲";
       font-size: 4rem;
