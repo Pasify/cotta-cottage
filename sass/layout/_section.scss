@@ -1,0 +1,140 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.featured-properties {
+  padding: 6rem 6%;
+  background-color: rgba($primary-dark, 0.05);
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+
+    @include respond(phone) {
+      gap: 2rem;
+    }
+  }
+
+  &__card {
+    background-color: $primary-light;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: $shadow-light;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: $shadow-medium;
+    }
+    &-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+    &-info {
+      padding: 2rem;
+
+      h3 {
+        font-size: clamp(1.6rem, 2vw, 2rem);
+        font-weight: 700;
+        color: $primary-dark;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: rgba($primary-dark, 0.8);
+        font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+// =======================
+// 🏡 Cotta Cottage Section
+// =======================
+.cotta-section {
+  padding: 8rem 6%;
+  background-color: $primary-light;
+  border-radius: 1rem;
+
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 5rem;
+
+    h2 {
+      font-size: clamp(2.4rem, 3vw, 3.2rem);
+      font-weight: 700;
+      color: $primary-dark;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: clamp(1.4rem, 2vw, 1.6rem);
+      color: rgba($primary-dark, 0.7);
+      max-width: 55ch;
+      margin-inline: auto;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__text {
+    p {
+      font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+      line-height: 1.7;
+      color: rgba($primary-dark, 0.9);
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+
+    img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: $shadow-light;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+}

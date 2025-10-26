@@ -11,41 +11,238 @@
     </head>
 
     <body>
-        <!-- mouse -->
+        <!-- mouse tracker -->
         <div class="mouse-tracker"></div>
-        <div class="header_container"> <!-- Header -->
+        <!--header section  -->
+        <div class="header_container">
             <header class="header">
-                <div class="logo">
-                    <span>COTTA</span>
-                    <span>COTTAGE</span>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#locations">Locations</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-                <div class="header-actions">
-                    <button>Booking</button>
-                    <button>
-                        <span class="material-symbols-outlined">search</span>
-                    </button>
-                    <button><span class="material-symbols-outlined"> account_circle </span></button>
+                <div class="header__content">
+                    <div class="logo">
+                        <span>COTTA</span>
+                        <span>COTTAGE</span>
+                    </div>
+                    <nav class="nav">
+                        <input type="checkbox" class="nav__check-box" id="nav-toggle" />
+                        <label for="nav-toggle" class="nav__button">
+                            <span class="nav__icon">&nbsp;</span>
+                        </label>
+                        <div class="nav__navigation">
+                            <ul class="nav__list">
+                                <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
+                                <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+                                <li class="nav__item"><a class="nav__link" href="#locations">Locations</a></li>
+                                <li class="nav__item"><a class="nav__link" href="#gallery">Gallery</a></li>
+                                <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav__overlay"></div>
+                    </nav>
+                    <div class="header-actions">
+                        <button>Booking</button>
+                        <button>
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                        <button>
+                            <span class="material-symbols-outlined">account_circle</span>
+                        </button>
+                    </div>
                 </div>
             </header>
-            <!-- hero section -->
             <section class="hero-section">
-                <div class="star-container">
-                    <span class="material-symbols-outlined star"> asterisk </span>
-                </div>
+                <span class="material-symbols-outlined star">asterisk</span>
                 <h1 class="heading-primary"> Book perfect stay for your vacation </h1>
-                <p class="">book your dream villa today and let us take you on a journey to unparalled opulence and
-                    relaxation</p>
+                <p> Book your dream villa today and let us take you on a journey to unparalleled opulence and relaxation
+                </p>
             </section>
         </div>
+        <!-- featured cottages  -->
+        <section class="featured-properties">
+            <div class="container">
+                <div class="featured-properties__grid">
+                    <div class="featured-properties__card">
+                        <div class="featured-properties__card-image">
+                            <img loading="lazy" src="./images/mountain_retreat.jpg" alt="Mountain Retreat" />
+                        </div>
+                        <div class="featured-properties__card-info">
+                            <h3>Mountain Retreat</h3>
+                            <p>Escape to the mountains in this cozy A-frame cabin surrounded by towering pines.</p>
+                        </div>
+                    </div>
+                    <div class="featured-properties__card">
+                        <div class="featured-properties__card-image">
+                            <img loading="lazy" src="./images/cabin_in_forest.jpg" alt="Forest Haven">
+                        </div>
+                        <div class="featured-properties__card-info">
+                            <h3>Forest Haven</h3>
+                            <p>Experience tranquility in our beautifully designed forest cabin with modern amenities.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="featured-properties__card">
+                        <div class="featured-properties__card-image">
+                            <img loading="lazy" src="./images/lakeside_cottage.jpg" alt="Lakeside Escape">
+                        </div>
+                        <div class="featured-properties__card-info">
+                            <h3>Lakeside Escape</h3>
+                            <p>Wake up to stunning lake views in this peaceful A-frame retreat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- cottage section -->
+        <section class="cotta-section">
+            <div class="container">
+                <div class="cotta-section__header">
+                    <h2>Cotta Cottage</h2>
+                    <p class="subtitle"> Discover the perfect blend of rustic charm and modern comfort in our
+                        handcrafted A-frame cabins </p>
+                </div>
+                <div class="cotta-section__content">
+                    <div class="cotta-section__text">
+                        <p>Our cottages are thoughtfully designed to provide you with an unforgettable experience. Each
+                            cabin features floor-to-ceiling windows that bring the outdoors in, allowing you to immerse
+                            yourself in nature while enjoying all the comforts of home.</p>
+                        <p>From the moment you step inside, you'll be greeted by warm wood interiors, cozy furnishings,
+                            and carefully curated details that make each stay special. Whether you're seeking adventure
+                            or relaxation, our cottages provide the perfect basecamp for your getaway.</p>
+                        <p>Experience the magic of waking up to birdsong, spending your days exploring pristine forests,
+                            and ending each evening under a canopy of stars. This is more than just accommodation – it's
+                            a return to what matters most.</p>
+                    </div>
+                    <div class="cotta-section__images">
+                        <img loading="lazy" src="/images/cottage_at_night.jpg" alt="Cabin at night" />
+                        <img loading="lazy" src="/images/cottage_interior.jpg" alt="Cabin interior" />
+                        <img loading="lazy" src="/images/cottage_deck.jpg" alt="Cabin deck" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- LOCATION SECTION -->
+        <section class="locations" id="locations">
+            <div class="container">
+                <h2 class="locations__title">We're Everywhere</h2>
+                <p class="locations__subtitle">Find your perfect escape in stunning locations across the country</p>
+                <div class="locations__grid">
+                    <div class="locations__card">
+                        <div class="locations__card-image">
+                            <img loading="lazy" src="./images/cottage1.jpg" alt="Colorado" />
+                        </div>
+                        <div class="locations__card-content">
+                            <h3>Colorado</h3>
+                            <p>Nestled in the Rocky Mountains, our Colorado cabins offer breathtaking views and endless
+                                outdoor adventures.</p>
+                            <a href="#" class="btn">Explore Location</a>
+                        </div>
+                    </div>
+                    <div class="locations__card">
+                        <div class="locations__card-image">
+                            <img loading="lazy" src="/images/cottage2.jpg" alt="Oregon">
+                        </div>
+                        <div class="locations__card-content">
+                            <h3>Oregon</h3>
+                            <p>Discover the lush forests and serene landscapes of the Pacific Northwest in our Oregon
+                                retreats.</p>
+                            <a href="#" class="btn">Explore Location</a>
+                        </div>
+                    </div>
+                    <div class="locations__card">
+                        <div class="locations__card-image">
+                            <img loading="lazy" src="/images/cottage3.jpg" alt="Vermont">
+                        </div>
+                        <div class="locations__card-content">
+                            <h3>Vermont</h3>
+                            <p>Experience New England charm in our Vermont cabins, perfect for fall foliage and winter
+                                wonderlands.</p>
+                            <a href="#" class="btn">Explore Location</a>
+                        </div>
+                    </div>
+                    <div class="locations__card">
+                        <div class="locations__card-image">
+                            <img loading="lazy" src="/images/cottage4.jpg" alt="Washington">
+                        </div>
+                        <div class="locations__card-content">
+                            <h3>Washington</h3>
+                            <p>Escape to the evergreen state with cabins surrounded by ancient forests and pristine
+                                lakes.</p>
+                            <a href="#" class="btn">Explore Location</a>
+                        </div>
+                    </div>
+                    <div class="locations__card">
+                        <div class="locations__card-image">
+                            <img loading="lazy" src="/images/springSide_cottage.jpg" alt="Montana">
+                        </div>
+                        <div class="locations__card-content">
+                            <h3>Montana</h3>
+                            <p>Find solitude in Big Sky Country with our remote Montana cabins offering true wilderness
+                                experiences.</p>
+                            <a href="#" class="btn">Explore Location</a>
+                        </div>
+                    </div>
+                    <div class="locations__card">
+                        <div class="locations__card-image">
+                            <img loading="lazy" src="/images/lakeside_cottage.jpg" alt="New York">
+                        </div>
+                        <div class="locations__card-content">
+                            <h3>New York</h3>
+                            <p>Retreat to the Adirondacks in our New York cabins, where adventure meets tranquility.</p>
+                            <a href="#" class="btn">Explore Location</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>We are waiting for you for an exceptional experience</h2>
+                <a href="#" class="cta__btn">Book Your Stay</a>
+            </div>
+        </section>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__content">
+                    <div class="footer__column">
+                        <div class="logo footer_logo">
+                            <span>COTTA</span>
+                            <span>COTTAGE</span>
+                        </div>
+                        <p>Creating unforgettable experiences in nature's most beautiful settings.</p>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Quick Links</h4>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a class="footer__link" href="#">About Us</a></li>
+                            <li class="footer__item"><a class="footer__link" href="#">Locations</a></li>
+                            <li class="footer__item"><a class="footer__link" href="#">Gallery</a></li>
+                            <li class="footer__item"><a class="footer__link" href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li class="footer__item"><a class="footer__link" href="#">FAQ</a></li>
+                            <li class="footer__item"><a class="footer__link" href="#">Booking Policy</a></li>
+                            <li class="footer__item"><a class="footer__link" href="#">Cancellation</a></li>
+                            <li class="footer__item"><a class="footer__link" href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li class="footer__item"><a class="footer__link" href="#">Instagram</a></li>
+                            <li class="footer__item"><a class="footer__link" href="#">Facebook</a></li>
+                            <li class="footer__item"><a class="footer__link" href="#">Twitter</a></li>
+                            <li class="footer__item"><a class="footer__link" href="#">Pinterest</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Cotta Cottage. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
         <script src="./script.js"></script>
     </body>
 

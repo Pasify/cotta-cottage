@@ -1,6 +1,8 @@
 @use "../abstract/variables" as *;
-
+@use "../abstract/mixins" as *;
+// rename this file to base later on
 /* 1. Use a more-intuitive box-sizing model */
+
 *,
 *::before,
 *::after {
@@ -11,11 +13,31 @@
 * {
   margin: 0;
 }
-
-/* 3. Enable keyword animations */
-@media (prefers-reduced-motion: no-preference) {
-  html {
+html {
+  font-size: 62.5%;
+  /* 3. Enable keyword animations */
+  @media (prefers-reduced-motion: no-preference) {
     interpolate-size: allow-keywords;
+  }
+  @include respond(tablet-landscape) {
+    // width < 900
+    //1rem = 9px, 9/16=37.5
+    font-size: 56.25%;
+  }
+  @include respond(tablet-portrait) {
+    //width < 600
+    //1rem = 8px, 8/16=37.5
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    //1 rem = 6px, 6/16 =37.5
+    font-size: 36.5%;
+  }
+
+  @include respond(big-desktop) {
+    //1rem = 12px
+    font-size: 75%;
   }
 }
 

@@ -1,0 +1,205 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+.nav {
+  // ==============================
+  //  BASE STRUCTURE
+  // ==============================
+  &__check-box {
+    display: none;
+  }
+
+  &__button {
+    display: none;
+    z-index: 20;
+    background-color: $primary-light;
+    border-radius: 1rem;
+    padding: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @include respond(phone) {
+      display: block;
+      height: 5rem;
+      width: 5rem;
+      position: fixed;
+      top: 1.3rem;
+      right: 4rem;
+    }
+  }
+
+  &__icon {
+    display: none;
+
+    @include respond(phone) {
+      display: inline-block;
+      position: relative;
+      height: 0.4rem;
+      width: 4rem;
+      top: 2.1rem;
+      left: 0.3rem;
+      background-color: $primary-dark;
+      transition: all 0.3s ease;
+
+      // Hamburger lines
+      &,
+      &::before,
+      &::after {
+        display: inline-block;
+        background-color: $primary-dark;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 0.4rem;
+        width: 4rem;
+        right: 0;
+        transition: all 0.3s ease;
+      }
+
+      &::before {
+        top: -1.2rem;
+      }
+
+      &::after {
+        top: 1.2rem;
+      }
+
+      &:hover {
+        &::before {
+          top: -0.8rem;
+        }
+        &::after {
+          top: 0.8rem;
+        }
+      }
+    }
+  }
+
+  // ==============================
+  //  MOBILE NAVIGATION
+  // ==============================
+  &__navigation {
+    @include respond(phone) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 60%;
+      background-color: $primary-light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+      z-index: 15;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
+
+    @include respond(phone) {
+      flex-direction: column;
+      width: 100%;
+      font-size: 2rem;
+      text-align: center;
+      padding: 2rem 0;
+    }
+  }
+
+  &__item {
+    @include respond(phone) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $primary-dark;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 1.1rem;
+    padding: 0.5rem 1rem;
+
+    &:focus,
+    &:hover {
+      @include hoverEffect(rgba($primary-dark, 0.8), $primary-light);
+      // background-color: rgba($primary-dark, 0.8);
+      // color: $primary-light;
+    }
+  }
+
+  // ==============================
+  //  OVERLAY (fade-in background)
+  // ==============================
+  &__overlay {
+    @include respond(phone) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+  }
+
+  // ==============================
+  //  CHECKBOX TRIGGERS (Menu open)
+  // ==============================
+  &__check-box:checked ~ #{&}__navigation {
+    transform: translateX(0);
+  }
+
+  &__check-box:checked ~ #{&}__overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__check-box:checked + #{&}__button > #{&}__icon {
+    background-color: transparent;
+  }
+
+  &__check-box:checked + #{&}__button > #{&}__icon::before {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  &__check-box:checked + #{&}__button > #{&}__icon::after {
+    top: 0;
+    transform: rotate(135deg);
+  }
+}
+
+// ==============================
+//  HEADER ACTIONS (Optional)
+// ==============================
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  button {
+    @include pill($primary-dark);
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+
+  button:has(span) {
+    padding: 0.5rem 0.8rem;
+  }
+}
