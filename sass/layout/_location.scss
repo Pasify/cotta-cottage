@@ -7,17 +7,19 @@
   text-align: center;
 
   // Headings
-  &__title {
-    font-size: clamp(2.5rem, 4vw, 4rem);
-    font-weight: 700;
-    color: $primary-dark;
-    margin-bottom: 1rem;
-  }
-
-  &__subtitle {
-    font-size: clamp(1.4rem, 2vw, 1.8rem);
-    color: rgba($primary-dark, 0.7);
-    margin-bottom: 4rem;
+  &__header {
+    text-align: left;
+    &-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: $primary-dark;
+      margin-bottom: 1rem;
+    }
+    &-subtitle {
+      font-size: 2.5rem;
+      color: rgba($primary-dark, 0.7);
+      margin-bottom: 4rem;
+    }
   }
 
   // Grid Layout
@@ -63,14 +65,14 @@
       padding: 2rem;
 
       h3 {
-        font-size: clamp(1.6rem, 2vw, 2rem);
+        font-size: 2.5rem;
         font-weight: 600;
         color: $primary-dark;
         margin-bottom: 1rem;
       }
 
       p {
-        font-size: clamp(1.3rem, 1.6vw, 1.5rem);
+        font-size: 2rem;
         color: rgba($primary-dark, 0.75);
         margin-bottom: 1.5rem;
         line-height: 1.6;
@@ -79,7 +81,7 @@
       .btn {
         display: inline-block;
         padding: 1rem 2rem;
-        font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+        font-size: 1.7rem;
         background: $primary-dark;
         color: $primary-light;
         border-radius: 0.6rem;

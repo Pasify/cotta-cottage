@@ -9,7 +9,7 @@
       rgba($primary-dark, 0.4) 60%,
       rgba($primary-dark, 0) 85%
     ),
-    url("../../images/cottage_hero.jpg");
+    url("./../../images/cottage_hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -115,7 +115,7 @@
       // }
     }
     p {
-      font-size: clamp(3rem, 2.5vw, 4rem);
+      font-size: 3.2rem;
       color: $accent-beige;
       margin-bottom: 2rem;
       line-height: 1;
