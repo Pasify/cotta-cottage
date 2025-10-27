@@ -96,8 +96,17 @@
     border-top: 1px solid rgba($accent-beige, 0.2);
     padding-top: 2rem;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: rgba($accent-beige, 0.7);
+    p > a {
+      color: rgba($accent-beige, 0.8);
+      text-decoration: none;
+      font-weight: 600;
+      &:hover,
+      &:focus {
+        @include hoverEffect(rgba($accent-beige, 0.6), $primary-light);
+      }
+    }
     // outline: 2px solid red;
     @include respond(phone) {
       text-align: left;

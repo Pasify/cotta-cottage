@@ -422,8 +422,18 @@ h6 {
   border-top: 1px solid rgba(245, 241, 237, 0.2);
   padding-top: 2rem;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: rgba(245, 241, 237, 0.7);
+}
+.footer__bottom p > a {
+  color: rgba(245, 241, 237, 0.8);
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer__bottom p > a:hover, .footer__bottom p > a:focus {
+  background-color: rgba(245, 241, 237, 0.6);
+  color: #ffffff;
+  outline: none;
 }
 @media (max-width: 37.5em) {
   .footer__bottom {
