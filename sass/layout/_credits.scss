@@ -1,0 +1,41 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+.credits-page {
+  padding: 6rem 6%;
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .credits-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 3rem 0;
+
+    li {
+      padding: 0.6rem 0;
+      font-size: 1.6rem;
+      color: rgba($primary-dark, 0.85);
+    }
+  }
+
+  .back-home {
+    margin-top: 2rem;
+
+    a {
+      @include pill($accent-beige);
+      text-decoration: none;
+      color: $primary-dark;
+      padding: 0.6rem 1rem;
+    }
+  }
+
+  @include respond(phone) {
+    padding: 4rem 2rem;
+    .credits-list li {
+      font-size: 1.4rem;
+    }
+  }
+}

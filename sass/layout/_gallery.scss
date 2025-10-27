@@ -1,0 +1,50 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+.page-gallery {
+  padding: 6rem 6%;
+
+  .gallery-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+
+    figure {
+      background: $primary-light;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 24rem;
+        object-fit: cover;
+        display: block;
+      }
+      figcaption {
+        padding: 1rem;
+        font-size: 1.4rem;
+        color: rgba($primary-dark, 0.7);
+      }
+    }
+  }
+
+  @include respond(tablet-portrait) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include respond(phone) {
+    padding: 4rem 2rem;
+    .grid {
+      grid-template-columns: 1fr;
+      figure img {
+        height: 18rem;
+      }
+    }
+  }
+}
